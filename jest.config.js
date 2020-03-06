@@ -1,10 +1,12 @@
 module.exports = {
   rootDir: __dirname,
   moduleNameMapper: {
-    'pages(.*)': '<rootDir>/src/pages$1'
+    '(\\.m)?\\.([s|a])?css$': 'identity-obj-proxy',
+
+    'pages(.*)': '<rootDir>/src/pages$1',
   },
   transformIgnorePatterns: [
-    '\\\/node_modules\\\/?!(zent|@zent/compat)'
+    '\\\/node_modules\\\/?!(zent)'
   ],
   transform: {
     '\\.[tj]sx?': '<rootDir>/jest.transform.js',
